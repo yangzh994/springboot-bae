@@ -51,14 +51,14 @@ public class UserController {
     @RequestMapping("/findAll")
     public List<User> findAll(User user){
         Map<String,Object> map = new HashMap();
-        map.put("param",map);
+        map.put("param",user);
         return userService.selectAll(User.class,map);
     }
 
     @RequestMapping("/findPage")
     public List<User> findPage(User user,Integer page,Integer size){
         Map<String,Object> map = new HashMap();
-        map.put("param",map);
+        map.put("param",user);
         //先根据条件查询总数
         Integer count = userService.selectCount(User.class, map);
         //分页查询
